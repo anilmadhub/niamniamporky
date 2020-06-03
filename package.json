@@ -6,9 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "sass": " node-sass --output-style compressed ./styles/_all.scss -o ./styles/compiled/ ",
+    "sass:watch": " npm run sass &&  node-sass --output-style compressed ./styles/_all.scss -wo ./styles/compiled/"
   },
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
     "bulma": "^0.8.2",
     "next": "9.4.4",
     "node-sass": "^4.14.1",

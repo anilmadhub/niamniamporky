@@ -1,27 +1,27 @@
+import React from "react";
 import Link from "next/link";
 export default function Header() {
+  const navLinks = [
+    { name: "Accueil", src: "/" },
+    { name: "Historique", src: "/historique" },
+    { name: "Carte et menus", src: "/carte-menus" },
+    { name: "Galerie", src: "/gallerie" },
+    { name: "Contacte", src: "contact" },
+  ];
   return (
-    <nav
-      class="navbar is-danger"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="container">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
-            <img
-              src="https://bulma.io/images/bulma-logo.png"
-              width="112"
-              height="28"
-            />
+    <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <div className="container">
+        <div className="navbar-brand">
+          <a className="navbar-item" href="/">
+            <h1 className="navbar-logo">Niamniamporky</h1>
           </a>
 
           <a
             role="button"
-            class="navbar-burger burger"
+            className="navbar-burger burger"
             aria-label="menu"
             aria-expanded="false"
-            data-target="navbarBasicExample"
+            data-target="navbarTarget"
           >
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -29,23 +29,13 @@ export default function Header() {
           </a>
         </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-end">
-            <Link href="/">
-              <a class="navbar-item">Accueil</a>
-            </Link>
-            <Link href="/historique">
-              <a class="navbar-item">Historique</a>
-            </Link>
-            <Link href="/carte-menus">
-              <a class="navbar-item">Carte et menus</a>
-            </Link>
-            <Link href="/galerie">
-              <a class="navbar-item">Galerie</a>
-            </Link>
-            <Link href="/contact">
-              <a class="navbar-item">Contact</a>
-            </Link>
+        <div id="navbarTarget" className="navbar-menu">
+          <div className="navbar-end">
+            {navLinks.map((link) => (
+              <Link href={link.src} key={link.src}>
+                <a className="navbar-item">{link.name}</a>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
