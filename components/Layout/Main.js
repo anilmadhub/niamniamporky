@@ -5,7 +5,7 @@ export default function Main(props) {
   return (
     <>
       <Header />
-      <main>{props.children}</main>
+      <div className="container">{props.children}</div>
       <Footer />
     </>
   );

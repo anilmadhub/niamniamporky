@@ -1,9 +1,9 @@
 import Main from "./../components/Layout/Main";
 
-export default function Contact() {
+export default function Galerie() {
   return (
     <Main>
-      <div>Contact page</div>
+      <div>Gallery page</div>
     </Main>
   );
 }

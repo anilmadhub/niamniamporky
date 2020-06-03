@@ -1,9 +1,9 @@
 import Main from "./../components/Layout/Main";
 
-export default function Contact() {
+export default function Historique() {
   return (
     <Main>
-      <div>Contact page</div>
+      <div>Historique page</div>
     </Main>
   );
 }
