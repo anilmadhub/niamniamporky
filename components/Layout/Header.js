@@ -23,7 +23,7 @@ export default function Header() {
 
           <a
             role="button"
-            className="navbar-burger burger"
+            className={!isActive ? "navbar-burger burger" : "navbar-burger burger is-active"}
             aria-label="menu"
             aria-expanded="false"
             data-target="navbarTarget"
