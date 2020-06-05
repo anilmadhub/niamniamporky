@@ -9,39 +9,48 @@
 .justify-center {
   justify-content: center;
 }
-.flex-column{
+.flex-column {
   flex-direction: column;
 }
 
-
-
-.font-niam{
-  font-family: 'Pacifico', cursive;
-
+.font-niam {
+  font-family: "Pacifico", cursive;
 }
 
-
+.m-10 {
+  margin: 10px;
+}
+.slick-slide {
+  padding: 20px !important;
+}
+.slick-center {
+  padding: 10px !important;
+}
 /* Animation */
+
+
+
+
 
 @keyframes fadeInUp {
   from {
-    transform: translate3d(0,40px,0)
+    transform: translate3d(0, 40px, 0);
   }
 
   to {
-    transform: translate3d(0,0,0);
-    opacity: 1
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
 
 @-webkit-keyframes fadeInUp {
   from {
-    transform: translate3d(0,40px,0)
+    transform: translate3d(0, 40px, 0);
   }
 
   to {
-    transform: translate3d(0,0,0);
-    opacity: 1
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
 
@@ -49,11 +58,11 @@
   animation-duration: 2s;
   animation-fill-mode: both;
   -webkit-animation-duration: 2s;
-  -webkit-animation-fill-mode: both
+  -webkit-animation-fill-mode: both;
 }
 
 .animatedFadeInUp {
-  opacity: 0
+  opacity: 0;
 }
 
 .fadeInUp {
@@ -63,5 +72,5 @@
 }
 
 @mixin smoothTransition {
-transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1)
+  transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }

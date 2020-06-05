@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export default function Gallerie() {
   const sliderRef = useRef();
+  const slider2Ref = useRef();
   const [isElementVisible, setElementVisible] = React.useState(true);
   const domRef = React.useRef();
   AnimateOnScroll(domRef, setElementVisible);
@@ -20,9 +21,10 @@ export default function Gallerie() {
     arrows: false,
     autoplay: true,
     lazyLoad: true,
+    draggable: true,
     swipeToSlide: true,
     centerMode: true,
-    fade: true,
+    centerPadding: "60px",
   };
   return (
     <Main>
@@ -39,7 +41,10 @@ export default function Gallerie() {
             >
               <button
                 className="button is-primary"
-                onClick={() => sliderRef.current.slickPrev()}
+                onClick={() => {
+                  sliderRef.current.slickPrev();
+                  slider2Ref.current.slickPrev();
+                }}
                 style={{ position: "absolute", bottom: "-40px", left: "50px" }}
               >
                 Previous
@@ -47,30 +52,41 @@ export default function Gallerie() {
               <button
                 style={{ position: "absolute", bottom: "-40px", right: "50px" }}
                 className="button is-primary"
-                onClick={() => sliderRef.current.slickNext()}
+                onClick={() => {
+                  sliderRef.current.slickNext();
+                  slider2Ref.current.slickNext();
+                }}
               >
                 Next
               </button>
 
               <Slider
+                asNavFor={slider2Ref.current}
                 ref={sliderRef}
                 {...settings}
-                className={`${
-                  isElementVisible && "animated animatedFadeInUp fadeInUp"
-                }`}
               >
                 {images.map((item) => (
-                  <div
-
-                    className="box has-background-white-ter is-shadowless"
+                  <img
+                    src={item}
                     key={uuidv4()}
-                  >
-                    <img
-                      src={item}
-                      key={uuidv4()}
-                      alt="test"
-                    />
-                  </div>
+                    alt="test"
+                  />
+                ))}
+              </Slider>
+              <Slider
+                asNavFor={sliderRef.current}
+                ref={slider2Ref}
+                slidesToShow={3}
+                swipeToSlide={true}
+                focusOnSelect={true}
+              >
+                {images.map((item) => (
+                  <img
+                    src={item}
+                    key={uuidv4()}
+                    alt="test"
+                    className="m-10"
+                  />
                 ))}
               </Slider>
             </div>
