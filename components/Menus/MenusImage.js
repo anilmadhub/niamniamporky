@@ -10,8 +10,10 @@ const MenusImageItem = ({ menuItem }) => {
             <React.Fragment key={uuidv4()}>
               <div className="tile is-parent">
                 <article
-                  className={`tile is-child notification  ${item.imageClass}`}
-                />
+                  className={`tile is-child`}
+                >
+                    <img src={item.image}/>
+                </article>
               </div>
               <div className="tile is-parent columns is-hidden-desktop">
                 <div className="column is-full">

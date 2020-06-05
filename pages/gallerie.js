@@ -2,29 +2,32 @@ import Main from "./../components/Layout/Main";
 import Slider from "react-slick";
 import React, { useRef } from "react";
 import { images } from "../assets/imageExport";
-import AnimateOnScroll from "../functions/AnimateOnScroll";
 import { v4 as uuidv4 } from "uuid";
 
 export default function Gallerie() {
   const sliderRef = useRef();
   const slider2Ref = useRef();
-  const [isElementVisible, setElementVisible] = React.useState(true);
-  const domRef = React.useRef();
-  AnimateOnScroll(domRef, setElementVisible);
+  const [isElementVisible, setElementVisible] = React.useState(false);
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     accessibility: true,
     arrows: false,
-    autoplay: true,
     lazyLoad: true,
     draggable: true,
     swipeToSlide: true,
     centerMode: true,
-    centerPadding: "60px",
+    responsive: [{
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        vertical: true,
+        verticalSwiping: true,
+      },
+    }],
   };
   return (
     <Main>
@@ -36,7 +39,6 @@ export default function Gallerie() {
               className={`slider-container ${
                 isElementVisible && "animated animatedFadeInUp fadeInUp"
               }`}
-              ref={domRef}
               style={{ position: "relative" }}
             >
               <button
@@ -45,12 +47,12 @@ export default function Gallerie() {
                   sliderRef.current.slickPrev();
                   slider2Ref.current.slickPrev();
                 }}
-                style={{ position: "absolute", bottom: "-40px", left: "50px" }}
+                style={{ position: "absolute", bottom: "-50px", left: "50px" }}
               >
                 Previous
               </button>
               <button
-                style={{ position: "absolute", bottom: "-40px", right: "50px" }}
+                style={{ position: "absolute", bottom: "-50px", right: "50px" }}
                 className="button is-primary"
                 onClick={() => {
                   sliderRef.current.slickNext();
@@ -66,27 +68,20 @@ export default function Gallerie() {
                 {...settings}
               >
                 {images.map((item) => (
-                  <img
-                    src={item}
-                    key={uuidv4()}
-                    alt="test"
-                  />
+                  <img src={item} key={uuidv4()} alt="test" />
                 ))}
               </Slider>
               <Slider
                 asNavFor={sliderRef.current}
                 ref={slider2Ref}
                 slidesToShow={3}
-                swipeToSlide={true}
                 focusOnSelect={true}
+                swipe={false}
+                infinite={true}
+                className="is-hidden-mobile"
               >
                 {images.map((item) => (
-                  <img
-                    src={item}
-                    key={uuidv4()}
-                    alt="test"
-                    className="m-10"
-                  />
+                  <img src={item} key={uuidv4()} alt="test" className="m-10" />
                 ))}
               </Slider>
             </div>
