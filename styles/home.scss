@@ -16,7 +16,7 @@
   z-index: 2;
 }
 .title-text {
-  font-size: 5rem;
+  font-size: 9rem;
 }
 .accueil-text {
   padding: 0 9rem;
@@ -72,17 +72,23 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.bg-4,
+.bg-5,
+.bg-6 {
+  @include smoothTransition;
+  &:hover {
+    transform: translateY(-1rem);
+  }
+}
 .menu-text-container {
   height: 300px;
 }
 .btn-menu {
 }
 
-@media only screen and (max-device-width: 640px)  {
+@media only screen and (max-device-width: 640px) {
   .parallax-home {
     min-height: 100px;
-
   }
   .accueil-text {
     padding: 0 1rem;
@@ -91,7 +97,7 @@
     margin-top: 0;
     padding: 0 1rem;
   }
-  .menu-section{
+  .menu-section {
     padding-top: 0;
   }
 }

@@ -2,11 +2,11 @@ import React from "react";
 
 const Accueil = () => {
   return (
-    <section className="section">
+    <section className="section" id="accueil">
       <div className="container">
         <>
           <h1 className="title has-text-centered">Accueil</h1>
-          <p className="is-size-4 accueil-text is-size-6-mobile">
+          <p className="is-size-4 accueil-text is-size-6-mobile has-text-centered">
             Situé sur la Route de Cocoterie, à Roche Bois, Niam Niam Porky- est
             un des restaurants des plus « cozy » au alentour de Port Louis. Pour
             ceux qui veulent s’évader pour un moment de la frénésie de la
@@ -15,7 +15,7 @@ const Accueil = () => {
             prix abordable.
           </p>
           <br />
-          <p className="is-size-4 accueil-text is-size-6-mobile">
+          <p className="is-size-4 accueil-text is-size-6-mobile has-text-centered">
             De 09H00 à 21H00, Niam Niam Porky propose une véritable cuisine
             Mauricienne. Les amateurs de mines bouilles, de bols renversé et de
             viande de porc viennent y mettre leur palais en joie. Il y a une

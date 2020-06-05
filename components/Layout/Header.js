@@ -5,9 +5,9 @@ export default function Header() {
   const navLinks = [
     { name: "Accueil", src: "/" },
     { name: "Historique", src: "/historique" },
-    { name: "Carte et menus", src: "/carte-menus" },
-    { name: "Galerie", src: "/gallerie" },
-    { name: "Contacte", src: "contact" },
+    { name: "Carte & menus", src: "/carte-menus" },
+    { name: "Gallerie", src: "/gallerie" },
+    { name: "Contacte & Réservations", src: "contact" },
   ];
   return (
     <nav
