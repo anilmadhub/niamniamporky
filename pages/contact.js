@@ -7,7 +7,7 @@ export default function Contact() {
         <div className="container">
           <h1 className="title has-text-centered">Contact & Réservation</h1>
 
-          <form name="contact_reservation" method="POST" netlify>
+          <form name="contact_reservation" method="POST" data-netlify="true">
             <div className="field">
               <label className="label">Name</label>
               <div className="control">
